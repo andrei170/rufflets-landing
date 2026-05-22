@@ -141,6 +141,25 @@
   form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   form .btn{width:100%;border:none;}
 
+  /* FAQ */
+  .faq{max-width:840px;margin:40px auto 0;}
+  .faq details{border-bottom:1px solid var(--line);padding:6px 0;}
+  .faq details[open]{padding-bottom:12px;}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:18px 40px 18px 0;position:relative;
+    font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;color:var(--green);font-weight:600;line-height:1.25;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"+";position:absolute;right:4px;top:16px;font-size:1.7rem;color:var(--gold);line-height:1;transition:transform .2s;
+  }
+  .faq details[open] summary::after{content:"\2013";}
+  .faq .answer{color:var(--muted);font-size:1.04rem;padding:0 40px 6px 0;}
+
+  /* MAP */
+  .map-wrap{margin-top:26px;border-radius:3px;overflow:hidden;border:1px solid var(--line);}
+  .map-wrap iframe{display:block;width:100%;height:300px;border:0;}
+
   /* FOOTER */
   footer{background:#1a2c22;color:#aeb6a8;padding:60px 0 34px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.86rem;}
   footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
@@ -222,7 +241,7 @@
 <!-- INTRO -->
 <section>
   <div class="wrap split">
-    <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/is1fplye/main-hotel.jpg" alt="Rufflets country house hotel exterior and grounds"></div>
+    <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/is1fplye/main-hotel.jpg" alt="Rufflets country house hotel exterior and grounds"></div>
     <div>
       <span class="eyebrow">Welcome to Rufflets</span>
       <h2>Not a chain. A family home you can stay in.</h2>
@@ -240,7 +259,7 @@
     <p class="lede">From turret bedrooms in the original 1924 house to garden-facing suites and self-catering cottages in the grounds. Every room is different, because it was never built to a template.</p>
     <div class="grid3">
       <div class="card">
-        <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/b1yljb40/turret-bedroom-7.jpg" alt="Turret bedroom inside the original 1924 mansion"></div>
+        <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/b1yljb40/turret-bedroom-7.jpg" alt="Turret bedroom inside the original 1924 mansion"></div>
         <div class="body">
           <h3>Rooms &amp; Turret Bedrooms</h3>
           <p>Characterful rooms in the original house, several set within the building's turrets and gables, looking out over the gardens.</p>
@@ -248,7 +267,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/5nskcj4g/gilroy-suite-2.jpg" alt="The Gilroy Suite at Rufflets"></div>
+        <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/5nskcj4g/gilroy-suite-2.jpg" alt="The Gilroy Suite at Rufflets"></div>
         <div class="body">
           <h3>Suites &amp; Garden Suites</h3>
           <p>Generous suites with sitting space and garden views, ideal for a special stay, an anniversary or a slower weekend away.</p>
@@ -256,7 +275,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/xvslphmn/rufflets-lodge-6.jpg" alt="Self-catering cottage in the grounds at Rufflets"></div>
+        <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/xvslphmn/rufflets-lodge-6.jpg" alt="Self-catering cottage in the grounds at Rufflets"></div>
         <div class="body">
           <h3>Cottages &amp; Kinness House</h3>
           <p>Self-catering cottages and a private house in the grounds, made for families, gatherings and longer stays in Fife.</p>
@@ -274,7 +293,7 @@
     <h2>From the kitchen garden to your table.</h2>
     <p class="lede">Seasonal Scottish cooking built around produce grown in our own organic kitchen garden. Home-grown, and good for you.</p>
     <div class="feature">
-      <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/ttbbnk2g/rufflets-food-6_websize.jpg" alt="A plated dish in the Rufflets Brasserie"></div>
+      <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/ttbbnk2g/rufflets-food-6_websize.jpg" alt="A plated dish in the Rufflets Brasserie"></div>
       <div class="text">
         <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
           <path fill="#c4a967" d="M14 4c-1 0-1.6.8-1.6 1.8v12c0 2.5 1.6 4.6 3.8 5.4V42c0 1.2 1 2 2 2s2-.8 2-2V23.2c2.2-.8 3.8-2.9 3.8-5.4v-12C24 4.8 23.3 4 22.4 4s-1.6.8-1.6 1.8V15h-1.4V5.8C19.4 4.8 18.7 4 17.8 4s-1.6.8-1.6 1.8V15h-1.4V5.8C14.8 4.8 14.9 4 14 4z"/>
@@ -296,7 +315,7 @@
     <h2>Marry in the gardens. Gather in the house.</h2>
     <p class="lede">Garden ceremonies, exclusive-use weekends and celebrations of every size, all wrapped around 10 acres of grounds and a house that has hosted gatherings for over seventy years.</p>
     <div class="feature flip">
-      <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/lifldxsz/garden-ceremony.jpg" alt="An outdoor wedding ceremony in the gardens at Rufflets"></div>
+      <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/lifldxsz/garden-ceremony.jpg" alt="An outdoor wedding ceremony in the gardens at Rufflets"></div>
       <div class="text">
         <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
           <path fill="#a98a3f" d="M24 42S7 30.5 7 18.8C7 12.8 11.6 8 17.3 8c3.4 0 6.4 1.7 8.2 4.3C27.3 9.7 30.3 8 33.7 8 39.4 8 44 12.8 44 18.8 44 30.5 24 42 24 42z" opacity=".35"/>
@@ -312,11 +331,11 @@
     </div>
     <div class="band">
       <div class="tile">
-        <img src="https://www.rufflets.co.uk/media/yvknk0ad/evening-party.jpg" alt="An evening celebration at Rufflets">
+        <img loading="lazy" src="https://www.rufflets.co.uk/media/yvknk0ad/evening-party.jpg" alt="An evening celebration at Rufflets">
         <div class="label"><h3>Celebrations &amp; Events</h3><p>Graduations, anniversaries and private parties in the house and gardens.</p></div>
       </div>
       <div class="tile">
-        <img src="https://www.rufflets.co.uk/media/jn2jwgn4/table-setting.jpg" alt="A dressed dinner table set for an event">
+        <img loading="lazy" src="https://www.rufflets.co.uk/media/jn2jwgn4/table-setting.jpg" alt="A dressed dinner table set for an event">
         <div class="label"><h3>Meetings &amp; Retreats</h3><p>Leadership retreats and meetings in a setting that helps people think.</p></div>
       </div>
     </div>
@@ -337,7 +356,7 @@
         <path fill="#c4a967" d="M24 12c2.5 3 4 6 4 9a4 4 0 01-8 0c0-3 1.5-6 4-9z"/>
       </svg>
     </div>
-    <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/uphlw2hc/formal-gardens.jpg" alt="The formal gardens at Rufflets St Andrews"></div>
+    <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/uphlw2hc/formal-gardens.jpg" alt="The formal gardens at Rufflets St Andrews"></div>
   </div>
 </section>
 
@@ -348,7 +367,7 @@
     <h2>An afternoon, properly spent.</h2>
     <p class="lede">Loose-leaf tea, scones and a tiered stand of garden-fresh sweet and savoury bites, served in the drawing room or out in the gardens when the Fife weather allows.</p>
     <div class="feature">
-      <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/hclg0gtj/drawing-room.jpg" alt="The drawing room at Rufflets, set for afternoon tea"></div>
+      <div class="imgwrap"><img loading="lazy" src="https://www.rufflets.co.uk/media/hclg0gtj/drawing-room.jpg" alt="The drawing room at Rufflets, set for afternoon tea"></div>
       <div class="text">
         <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
           <path fill="#a98a3f" d="M8 18h26v8a13 13 0 01-26 0v-8z" opacity=".4"/>
@@ -380,6 +399,44 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;text-align:center;">Good to Know</span>
+    <h2 style="text-align:center;">Your questions, answered.</h2>
+    <div class="faq">
+      <details>
+        <summary>Where is Rufflets?</summary>
+        <div class="answer">We are on Strathkinness Low Road, St Andrews, Fife, KY16 9TX, set in our own grounds about five minutes from the centre of St Andrews and a short drive from the Old Course.</div>
+      </details>
+      <details>
+        <summary>Is Rufflets dog-friendly?</summary>
+        <div class="answer">Yes, we welcome dogs. Well-behaved dogs are very welcome in selected rooms and in our self-catering cottages, so please let us know you are bringing one when you enquire and we will look after you both.</div>
+      </details>
+      <details>
+        <summary>Do you host weddings and events?</summary>
+        <div class="answer">We do. We host garden ceremonies, exclusive-use wedding weekends and celebrations of every size, along with private parties, meetings and retreats across the house and the gardens.</div>
+      </details>
+      <details>
+        <summary>What dining is available?</summary>
+        <div class="answer">You can dine in our Brasserie for relaxed all-day food, enjoy a drink in the 1924 Bar, and book afternoon tea in the drawing room or out in the gardens. Our cooking is built around seasonal Scottish produce, much of it from our own kitchen garden.</div>
+      </details>
+      <details>
+        <summary>Is the hotel family-owned?</summary>
+        <div class="answer">Yes. Rufflets has been looked after by the Russell family since 1952, and it is still independently run by the family in person today, across three generations.</div>
+      </details>
+      <details>
+        <summary>Is there parking, and are the gardens open to guests?</summary>
+        <div class="answer">There is parking on site for guests, and our 10 acres of gardens are open for you to enjoy throughout your stay, from the formal gardens to the organic kitchen garden and woodland walks.</div>
+      </details>
+      <details>
+        <summary>How do I check availability or make a booking?</summary>
+        <div class="answer">The easiest way is to call us on <a href="tel:+441334472594" style="color:var(--gold);">01334 472594</a> or email <a href="mailto:reservations@rufflets.co.uk" style="color:var(--gold);">reservations@rufflets.co.uk</a>, and the team will help you plan your stay.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
@@ -402,6 +459,9 @@
         <div class="info-row">
           <svg class="ic" width="30" height="30" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="9" fill="none" stroke="#a98a3f" stroke-width="2.6"/><circle cx="24" cy="24" r="7" fill="none" stroke="#c4a967" stroke-width="2.6"/><circle cx="33.5" cy="14.5" r="2" fill="#a98a3f"/></svg>
           <div><b>Follow</b><a href="https://www.instagram.com/ruffletshotel/">@ruffletshotel</a></div>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Rufflets+Strathkinness+Low+Road+St+Andrews+KY16+9TX&output=embed" loading="lazy" title="Rufflets St Andrews location" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
       <form onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Thank you, the team will reply soon';">
@@ -511,6 +571,49 @@
     "addressCountry":"GB"
   },
   "sameAs":["https://www.instagram.com/ruffletshotel/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Where is Rufflets?",
+      "acceptedAnswer":{"@type":"Answer","text":"We are on Strathkinness Low Road, St Andrews, Fife, KY16 9TX, set in our own grounds about five minutes from the centre of St Andrews and a short drive from the Old Course."}
+    },
+    {
+      "@type":"Question",
+      "name":"Is Rufflets dog-friendly?",
+      "acceptedAnswer":{"@type":"Answer","text":"Yes, we welcome dogs. Well-behaved dogs are very welcome in selected rooms and in our self-catering cottages, so please let us know you are bringing one when you enquire and we will look after you both."}
+    },
+    {
+      "@type":"Question",
+      "name":"Do you host weddings and events?",
+      "acceptedAnswer":{"@type":"Answer","text":"We do. We host garden ceremonies, exclusive-use wedding weekends and celebrations of every size, along with private parties, meetings and retreats across the house and the gardens."}
+    },
+    {
+      "@type":"Question",
+      "name":"What dining is available?",
+      "acceptedAnswer":{"@type":"Answer","text":"You can dine in our Brasserie for relaxed all-day food, enjoy a drink in the 1924 Bar, and book afternoon tea in the drawing room or out in the gardens. Our cooking is built around seasonal Scottish produce, much of it from our own kitchen garden."}
+    },
+    {
+      "@type":"Question",
+      "name":"Is the hotel family-owned?",
+      "acceptedAnswer":{"@type":"Answer","text":"Yes. Rufflets has been looked after by the Russell family since 1952, and it is still independently run by the family in person today, across three generations."}
+    },
+    {
+      "@type":"Question",
+      "name":"Is there parking, and are the gardens open to guests?",
+      "acceptedAnswer":{"@type":"Answer","text":"There is parking on site for guests, and our 10 acres of gardens are open for you to enjoy throughout your stay, from the formal gardens to the organic kitchen garden and woodland walks."}
+    },
+    {
+      "@type":"Question",
+      "name":"How do I check availability or make a booking?",
+      "acceptedAnswer":{"@type":"Answer","text":"The easiest way is to call us on 01334 472594 or email reservations@rufflets.co.uk, and the team will help you plan your stay."}
+    }
+  ]
 }
 </script>
 
