@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rufflets St Andrews &middot; Country House Hotel in Fife since 1952</title>
+<meta name="description" content="Rufflets St Andrews is an independent country house hotel set in 10 acres of award-winning gardens, run by the Russell family since 1952. A 1924 turreted mansion in Fife, five minutes from St Andrews.">
+<style>
+  :root{
+    --green:#21372b;
+    --green-soft:#33503f;
+    --gold:#a98a3f;
+    --gold-soft:#c4a967;
+    --cream:#f6f2e9;
+    --paper:#fbf9f4;
+    --ink:#23271f;
+    --muted:#5a5f52;
+    --line:#e3dccb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand{font-family:'Cormorant Garamond',Georgia,serif;}
+  img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:.72rem;
+    color:var(--gold);
+    font-weight:700;
+  }
+  section{padding:84px 0;}
+  h2{font-size:2.5rem;font-weight:600;color:var(--green);line-height:1.12;margin:.4rem 0 1rem;letter-spacing:.01em;}
+  .lede{font-size:1.15rem;color:var(--muted);max-width:680px;}
+
+  /* NAV */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(33,55,43,.97);
+    border-bottom:1px solid rgba(196,169,103,.3);
+    backdrop-filter:blur(6px);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
+  .brand{color:var(--cream);font-size:1.55rem;font-weight:600;letter-spacing:.02em;display:flex;flex-direction:column;line-height:1;}
+  .brand small{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.58rem;letter-spacing:.34em;color:var(--gold-soft);text-transform:uppercase;margin-top:5px;}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center;}
+  nav a{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--cream);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+    transition:color .2s;
+  }
+  nav a:hover{color:var(--gold-soft);}
+  .btn{
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    display:inline-block;padding:13px 26px;border-radius:2px;
+    background:var(--gold);color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    transition:background .2s,transform .2s;border:1px solid var(--gold);cursor:pointer;
+  }
+  .btn:hover{background:var(--gold-soft);}
+  .btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--gold-soft);}
+  .btn.ghost:hover{background:var(--gold-soft);color:var(--green);}
+  .nav-cta{display:flex;gap:14px;align-items:center;}
+  .menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;}
+  .hero .bg{position:absolute;inset:0;}
+  .hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,55,43,.35) 0%,rgba(33,55,43,.78) 100%);}
+  .hero-content{position:relative;z-index:2;color:#fff;padding-bottom:72px;}
+  .hero h1{font-size:4.4rem;font-weight:600;line-height:1.04;margin:.5rem 0 1.1rem;text-shadow:0 2px 18px rgba(0,0,0,.3);}
+  .hero p{font-size:1.3rem;max-width:620px;color:#f3efe4;text-shadow:0 1px 10px rgba(0,0,0,.4);}
+  .hero .eyebrow{color:var(--gold-soft);}
+  .hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+
+  /* TRUST STRIP */
+  .trust{background:var(--green);color:var(--cream);padding:26px 0;}
+  .trust-inner{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;}
+  .trust-inner div{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;}
+  .trust-inner b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;color:var(--gold-soft);letter-spacing:0;text-transform:none;margin-bottom:2px;}
+
+  /* INTRO SPLIT */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;}
+  .split .imgwrap{aspect-ratio:3/2;border-radius:3px;overflow:hidden;box-shadow:0 26px 60px rgba(33,55,43,.18);}
+  .quote{border-left:3px solid var(--gold);padding-left:22px;margin-top:24px;font-size:1.18rem;font-style:italic;color:var(--green-soft);}
+
+  /* ROOMS */
+  .alt{background:var(--cream);}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:46px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;}
+  .card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(33,55,43,.14);}
+  .card .imgwrap{aspect-ratio:4/3;overflow:hidden;}
+  .card .body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column;}
+  .card h3{font-size:1.5rem;color:var(--green);margin-bottom:6px;}
+  .card p{color:var(--muted);font-size:.98rem;}
+  .card .more{margin-top:auto;padding-top:14px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+
+  /* FEATURE / DINING + GARDENS alternating */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-radius:3px;overflow:hidden;box-shadow:0 22px 54px rgba(33,55,43,.14);margin-top:40px;}
+  .feature .imgwrap{min-height:420px;}
+  .feature .text{background:#fff;padding:54px 50px;display:flex;flex-direction:column;justify-content:center;}
+  .feature.flip .imgwrap{order:2;}
+  .feature .text h3{font-size:2rem;color:var(--green);margin-bottom:14px;}
+  .feature .text p{color:var(--muted);margin-bottom:14px;}
+  .icon{width:46px;height:46px;margin-bottom:16px;}
+
+  /* HERITAGE */
+  .heritage{background:var(--green);color:var(--cream);}
+  .heritage h2{color:#fff;}
+  .heritage .eyebrow{color:var(--gold-soft);}
+  .heritage .lede{color:#d9e0d4;}
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;}
+  .tl{border-top:2px solid var(--gold);padding-top:18px;}
+  .tl b{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.2rem;color:var(--gold-soft);display:block;}
+  .tl span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.86rem;color:#cdd5c8;letter-spacing:.04em;}
+
+  /* AFTERNOON TEA / EXPERIENCES band */
+  .band{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:46px;}
+  .band .tile{position:relative;aspect-ratio:16/10;border-radius:3px;overflow:hidden;}
+  .band .tile .label{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;background:linear-gradient(180deg,rgba(33,55,43,0) 30%,rgba(33,55,43,.82) 100%);color:#fff;}
+  .band .tile .label h3{font-size:1.7rem;}
+  .band .tile .label p{font-size:.95rem;color:#eee6d6;}
+
+  /* CONTACT */
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-top:40px;}
+  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
+  .info-row .ic{flex:0 0 30px;}
+  .info-row b{display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  form{background:#fff;border:1px solid var(--line);border-radius:3px;padding:34px;}
+  form label{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;}
+  form input,form textarea,form select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:2px;font-family:Georgia,serif;font-size:1rem;margin-bottom:18px;background:var(--paper);color:var(--ink);}
+  form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  form .btn{width:100%;border:none;}
+
+  /* FOOTER */
+  footer{background:#1a2c22;color:#aeb6a8;padding:60px 0 34px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.86rem;}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  footer h4{font-family:'Cormorant Garamond',Georgia,serif;color:var(--cream);font-size:1.4rem;margin-bottom:12px;}
+  footer a:hover{color:var(--gold-soft);}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:8px;}
+  .legal{border-top:1px solid #2c4234;padding-top:24px;font-size:.76rem;color:#7e8878;line-height:1.7;}
+  .legal a{color:var(--gold-soft);}
+  .demo-flag{background:var(--gold);color:#1a2c22;text-align:center;padding:9px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;}
+
+  @media(max-width:900px){
+    nav ul{display:none;}
+    .menu-toggle{display:block;}
+    .split,.feature,.contact-grid,.band{grid-template-columns:1fr;}
+    .feature.flip .imgwrap{order:0;}
+    .grid3{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:2.9rem;}
+    h2{font-size:2rem;}
+    section{padding:60px 0;}
+    .trust-inner{gap:30px;}
+    .feature .text{padding:38px 28px;}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="demo-flag">Demo concept &middot; not the live Rufflets website</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">Rufflets<small>St Andrews &middot; Since 1952</small></a>
+    <nav>
+      <ul>
+        <li><a href="#stay">Stay</a></li>
+        <li><a href="#dining">Food &amp; Drink</a></li>
+        <li><a href="#weddings">Weddings</a></li>
+        <li><a href="#gardens">Gardens</a></li>
+        <li><a href="#tea">Afternoon Tea</a></li>
+        <li><a href="#heritage">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn">Check Availability</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0;">
+  <div class="bg"><img src="https://www.rufflets.co.uk/media/03apslfb/rufflets-st-andrews.jpg" alt="The 1924 turreted mansion at Rufflets St Andrews, set in 10 acres of gardens"></div>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Country House Hotel &middot; Fife</span>
+    <h1>A 1924 country house,<br>run by one family since 1952.</h1>
+    <p>An independent turreted mansion set in 10 acres of award-winning gardens, five minutes from St Andrews. Three generations of the Russell family, one address, the warmest of welcomes.</p>
+    <div class="hero-actions">
+      <a href="#stay" class="btn">Explore the Rooms</a>
+      <a href="#heritage" class="btn ghost">Our Family Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner wrap">
+    <div><b>1952</b>Family-run since</div>
+    <div><b>1924</b>Donald Mills mansion</div>
+    <div><b>10</b>Acres of gardens</div>
+    <div><b>AA Top 200</b>Hotels in Britain</div>
+    <div><b>5 min</b>From St Andrews</div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section>
+  <div class="wrap split">
+    <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/is1fplye/main-hotel.jpg" alt="Rufflets country house hotel exterior and grounds"></div>
+    <div>
+      <span class="eyebrow">Welcome to Rufflets</span>
+      <h2>Not a chain. A family home you can stay in.</h2>
+      <p class="lede">Rufflets was built in 1924 as a private house by the architect Donald Mills, and became one of Scotland's first country house hotels. The Russell family have looked after it since 1952, and they still do, in person, today.</p>
+      <p class="quote">Nature, shared. Hospitality from the heart, in intimate spaces made for being together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STAY / ROOMS -->
+<section class="alt" id="stay">
+  <div class="wrap">
+    <span class="eyebrow">Stay</span>
+    <h2>Rooms, suites and private cottages.</h2>
+    <p class="lede">From turret bedrooms in the original 1924 house to garden-facing suites and self-catering cottages in the grounds. Every room is different, because it was never built to a template.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/b1yljb40/turret-bedroom-7.jpg" alt="Turret bedroom inside the original 1924 mansion"></div>
+        <div class="body">
+          <h3>Rooms &amp; Turret Bedrooms</h3>
+          <p>Characterful rooms in the original house, several set within the building's turrets and gables, looking out over the gardens.</p>
+          <span class="more">View Rooms</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/5nskcj4g/gilroy-suite-2.jpg" alt="The Gilroy Suite at Rufflets"></div>
+        <div class="body">
+          <h3>Suites &amp; Garden Suites</h3>
+          <p>Generous suites with sitting space and garden views, ideal for a special stay, an anniversary or a slower weekend away.</p>
+          <span class="more">View Suites</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/xvslphmn/rufflets-lodge-6.jpg" alt="Self-catering cottage in the grounds at Rufflets"></div>
+        <div class="body">
+          <h3>Cottages &amp; Kinness House</h3>
+          <p>Self-catering cottages and a private house in the grounds, made for families, gatherings and longer stays in Fife.</p>
+          <span class="more">View Cottages</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DINING -->
+<section id="dining">
+  <div class="wrap">
+    <span class="eyebrow">Food &amp; Drink</span>
+    <h2>From the kitchen garden to your table.</h2>
+    <p class="lede">Seasonal Scottish cooking built around produce grown in our own organic kitchen garden. Home-grown, and good for you.</p>
+    <div class="feature">
+      <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/ttbbnk2g/rufflets-food-6_websize.jpg" alt="A plated dish in the Rufflets Brasserie"></div>
+      <div class="text">
+        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#c4a967" d="M14 4c-1 0-1.6.8-1.6 1.8v12c0 2.5 1.6 4.6 3.8 5.4V42c0 1.2 1 2 2 2s2-.8 2-2V23.2c2.2-.8 3.8-2.9 3.8-5.4v-12C24 4.8 23.3 4 22.4 4s-1.6.8-1.6 1.8V15h-1.4V5.8C19.4 4.8 18.7 4 17.8 4s-1.6.8-1.6 1.8V15h-1.4V5.8C14.8 4.8 14.9 4 14 4z"/>
+          <path fill="#a98a3f" d="M34 4c-3.3 0-6 4-6 11 0 5.2 1.8 8.4 4 9.5V42c0 1.2 1 2 2 2s2-.8 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>The Brasserie &amp; 1924 Bar</h3>
+        <p>Relaxed all-day dining and a warm bar named for the year the house was built. Local seafood, garden vegetables and Scottish meat, cooked simply and well.</p>
+        <p>Open to residents and visitors alike, for lunch, dinner and a quiet drink by the fire.</p>
+        <a href="#contact" class="btn" style="align-self:flex-start;margin-top:10px;">Reserve a Table</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEDDINGS / EVENTS -->
+<section class="alt" id="weddings">
+  <div class="wrap">
+    <span class="eyebrow">Weddings &amp; Celebrations</span>
+    <h2>Marry in the gardens. Gather in the house.</h2>
+    <p class="lede">Garden ceremonies, exclusive-use weekends and celebrations of every size, all wrapped around 10 acres of grounds and a house that has hosted gatherings for over seventy years.</p>
+    <div class="feature flip">
+      <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/lifldxsz/garden-ceremony.jpg" alt="An outdoor wedding ceremony in the gardens at Rufflets"></div>
+      <div class="text">
+        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#a98a3f" d="M24 42S7 30.5 7 18.8C7 12.8 11.6 8 17.3 8c3.4 0 6.4 1.7 8.2 4.3C27.3 9.7 30.3 8 33.7 8 39.4 8 44 12.8 44 18.8 44 30.5 24 42 24 42z" opacity=".35"/>
+          <circle cx="18" cy="16" r="6" fill="none" stroke="#c4a967" stroke-width="2.6"/>
+          <circle cx="30" cy="16" r="6" fill="none" stroke="#a98a3f" stroke-width="2.6"/>
+          <path fill="#c4a967" d="M16 9l2 3 2-3-2-1.6z"/>
+        </svg>
+        <h3>Your gathering of the clans</h3>
+        <p>Lower-garden ceremonies under the trees, the Garden Suite for receptions and the run of the house for exclusive-use celebrations.</p>
+        <p>Little weddings for two, or the whole party. The team plans every detail in person, the way they have since 1952.</p>
+        <a href="#contact" class="btn" style="align-self:flex-start;margin-top:10px;">Enquire About Weddings</a>
+      </div>
+    </div>
+    <div class="band">
+      <div class="tile">
+        <img src="https://www.rufflets.co.uk/media/yvknk0ad/evening-party.jpg" alt="An evening celebration at Rufflets">
+        <div class="label"><h3>Celebrations &amp; Events</h3><p>Graduations, anniversaries and private parties in the house and gardens.</p></div>
+      </div>
+      <div class="tile">
+        <img src="https://www.rufflets.co.uk/media/jn2jwgn4/table-setting.jpg" alt="A dressed dinner table set for an event">
+        <div class="label"><h3>Meetings &amp; Retreats</h3><p>Leadership retreats and meetings in a setting that helps people think.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARDENS -->
+<section id="gardens">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">10 Acres of Gardens</span>
+      <h2>Award-winning gardens, tended by hand.</h2>
+      <p class="lede">Formal gardens, an organic kitchen garden and quiet woodland walks, all part of the grounds that surround the house. Much of what reaches the kitchen is grown a few steps from the door.</p>
+      <svg class="icon" viewBox="0 0 48 48" aria-hidden="true" style="margin-top:18px;">
+        <path fill="#33503f" d="M24 6c-6 5-9 10-9 15a9 9 0 0018 0c0-5-3-10-9-15z" opacity=".55"/>
+        <path fill="#a98a3f" d="M24 6c-6 5-9 10-9 15a9 9 0 0018 0c0-5-3-10-9-15z" opacity=".4"/>
+        <rect x="22.6" y="26" width="2.8" height="16" rx="1.2" fill="#a98a3f"/>
+        <path fill="#c4a967" d="M24 12c2.5 3 4 6 4 9a4 4 0 01-8 0c0-3 1.5-6 4-9z"/>
+      </svg>
+    </div>
+    <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/uphlw2hc/formal-gardens.jpg" alt="The formal gardens at Rufflets St Andrews"></div>
+  </div>
+</section>
+
+<!-- AFTERNOON TEA -->
+<section class="alt" id="tea">
+  <div class="wrap">
+    <span class="eyebrow">Afternoon Tea</span>
+    <h2>An afternoon, properly spent.</h2>
+    <p class="lede">Loose-leaf tea, scones and a tiered stand of garden-fresh sweet and savoury bites, served in the drawing room or out in the gardens when the Fife weather allows.</p>
+    <div class="feature">
+      <div class="imgwrap"><img src="https://www.rufflets.co.uk/media/hclg0gtj/drawing-room.jpg" alt="The drawing room at Rufflets, set for afternoon tea"></div>
+      <div class="text">
+        <svg class="icon" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#a98a3f" d="M8 18h26v8a13 13 0 01-26 0v-8z" opacity=".4"/>
+          <path fill="none" stroke="#a98a3f" stroke-width="2.6" d="M8 18h26v8a13 13 0 01-26 0v-8z"/>
+          <path fill="none" stroke="#c4a967" stroke-width="2.6" d="M34 20h4a4 4 0 010 8h-4"/>
+          <line x1="7" y1="40" x2="35" y2="40" stroke="#a98a3f" stroke-width="2.6" stroke-linecap="round"/>
+          <path fill="none" stroke="#c4a967" stroke-width="2.2" stroke-linecap="round" d="M15 8c0 2-1.4 3-1.4 5M21 8c0 2-1.4 3-1.4 5M27 8c0 2-1.4 3-1.4 5"/>
+        </svg>
+        <h3>The Chef &amp; The Gardener</h3>
+        <p>A seasonal tea that changes with the kitchen garden. Book it as a treat, a catch-up, or the gentlest way to spend an afternoon near St Andrews.</p>
+        <a href="#contact" class="btn" style="align-self:flex-start;margin-top:10px;">Book Afternoon Tea</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage" id="heritage">
+  <div class="wrap">
+    <span class="eyebrow">Our Story</span>
+    <h2>Three generations. One front door.</h2>
+    <p class="lede">Built in 1924 by the architect Donald Mills as a private home, Rufflets became one of Scotland's first country house hotels. The Russell family took it on in 1952, and have run it personally ever since, bringing people together for over seventy years.</p>
+    <div class="timeline">
+      <div class="tl"><b>1924</b><span>Donald Mills builds the turreted mansion as a private home.</span></div>
+      <div class="tl"><b>1952</b><span>The Russell family take over and begin welcoming guests.</span></div>
+      <div class="tl"><b>1999</b><span>Recognised among the AA Top 200 Hotels in Britain.</span></div>
+      <div class="tl"><b>Today</b><span>Still independent, still family-run, still here in person.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Plan Your Stay</span>
+    <h2>Talk to the family who run it.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="info-row">
+          <svg class="ic" width="30" height="30" viewBox="0 0 48 48"><path fill="#a98a3f" d="M24 4c-7.7 0-14 6.3-14 14 0 10 14 26 14 26s14-16 14-26c0-7.7-6.3-14-14-14z" opacity=".35"/><circle cx="24" cy="18" r="5.5" fill="none" stroke="#a98a3f" stroke-width="2.6"/></svg>
+          <div><b>Find Us</b>Strathkinness Low Road, St Andrews, Fife, KY16 9TX<br>Five minutes from the centre of St Andrews.</div>
+        </div>
+        <div class="info-row">
+          <svg class="ic" width="30" height="30" viewBox="0 0 48 48"><path fill="#a98a3f" d="M12 6c-2 0-4 2-4 4 0 16 14 30 30 30 2 0 4-2 4-4v-6l-9-3-4 5c-6-3-11-8-14-14l5-4-3-9z"/></svg>
+          <div><b>Call Reservations</b><a href="tel:+441334472594">01334 472594</a></div>
+        </div>
+        <div class="info-row">
+          <svg class="ic" width="30" height="30" viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="26" rx="3" fill="none" stroke="#a98a3f" stroke-width="2.6"/><path fill="none" stroke="#c4a967" stroke-width="2.6" d="M7 13l17 13L41 13"/></svg>
+          <div><b>Email</b><a href="mailto:reservations@rufflets.co.uk">reservations@rufflets.co.uk</a></div>
+        </div>
+        <div class="info-row">
+          <svg class="ic" width="30" height="30" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="9" fill="none" stroke="#a98a3f" stroke-width="2.6"/><circle cx="24" cy="24" r="7" fill="none" stroke="#c4a967" stroke-width="2.6"/><circle cx="33.5" cy="14.5" r="2" fill="#a98a3f"/></svg>
+          <div><b>Follow</b><a href="https://www.instagram.com/ruffletshotel/">@ruffletshotel</a></div>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Thank you, the team will reply soon';">
+        <div class="row2">
+          <div><label>First Name</label><input type="text" placeholder="Your name"></div>
+          <div><label>Last Name</label><input type="text" placeholder="Your surname"></div>
+        </div>
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com">
+        <label>I'm enquiring about</label>
+        <select>
+          <option>A room or suite</option>
+          <option>A cottage or Kinness House</option>
+          <option>Dining or afternoon tea</option>
+          <option>A wedding</option>
+          <option>An event, meeting or retreat</option>
+        </select>
+        <label>Message</label>
+        <textarea rows="3" placeholder="Tell us a little about your plans"></textarea>
+        <button type="submit" class="btn">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Rufflets St Andrews</h4>
+        <p>An independent country house hotel in Fife, run by the Russell family since 1952. Strathkinness Low Road, St Andrews, KY16 9TX.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#stay">Rooms &amp; Suites</a></li>
+          <li><a href="#dining">Food &amp; Drink</a></li>
+          <li><a href="#weddings">Weddings &amp; Events</a></li>
+          <li><a href="#gardens">The Gardens</a></li>
+          <li><a href="#tea">Afternoon Tea</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+441334472594">01334 472594</a></li>
+          <li><a href="mailto:reservations@rufflets.co.uk">reservations@rufflets.co.uk</a></li>
+          <li><a href="https://www.instagram.com/ruffletshotel/">@ruffletshotel</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      Licensed under the Licensing (Scotland) Act 2005. Food hygiene standards maintained in line with Food Standards Scotland. All information shown is illustrative and is presented in line with the ASA CAP Code; nothing here forms a contractual offer.<br><br>
+      Concept by <a href="https://andrei170.github.io/ag1/#services">AG Consulting</a>. This is a demo concept and not the live Rufflets website.
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Hotel",
+  "name":"Rufflets St Andrews",
+  "description":"An independent country house hotel set in 10 acres of award-winning gardens, run by the Russell family since 1952. A 1924 turreted mansion in Fife, five minutes from St Andrews.",
+  "url":"https://www.rufflets.co.uk/",
+  "telephone":"+44 1334 472594",
+  "email":"reservations@rufflets.co.uk",
+  "image":"https://www.rufflets.co.uk/media/03apslfb/rufflets-st-andrews.jpg",
+  "priceRange":"Country house hotel",
+  "starRating":{"@type":"Rating","ratingValue":"4"},
+  "petsAllowed":true,
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Strathkinness Low Road",
+    "addressLocality":"St Andrews",
+    "addressRegion":"Fife",
+    "postalCode":"KY16 9TX",
+    "addressCountry":"GB"
+  },
+  "geo":{"@type":"GeoCoordinates","latitude":56.3370,"longitude":-2.8290},
+  "amenityFeature":[
+    {"@type":"LocationFeatureSpecification","name":"Restaurant","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Afternoon Tea","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Wedding Venue","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Gardens","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Event Space","value":true}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Rufflets St Andrews",
+  "image":"https://www.rufflets.co.uk/media/is1fplye/main-hotel.jpg",
+  "telephone":"+44 1334 472594",
+  "email":"reservations@rufflets.co.uk",
+  "url":"https://www.rufflets.co.uk/",
+  "foundingDate":"1952",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Strathkinness Low Road",
+    "addressLocality":"St Andrews",
+    "addressRegion":"Fife",
+    "postalCode":"KY16 9TX",
+    "addressCountry":"GB"
+  },
+  "sameAs":["https://www.instagram.com/ruffletshotel/"]
+}
+</script>
+
+<script>
+  document.querySelector('.menu-toggle')?.addEventListener('click',function(){
+    var n=document.querySelector('nav ul');
+    n.style.display = n.style.display==='flex' ? 'none' : 'flex';
+  });
+</script>
+</body>
+</html>
