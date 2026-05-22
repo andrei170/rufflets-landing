@@ -160,6 +160,14 @@
   .map-wrap{margin-top:26px;border-radius:3px;overflow:hidden;border:1px solid var(--line);}
   .map-wrap iframe{display:block;width:100%;height:300px;border:0;}
 
+  /* VIDEO */
+  .video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:3px;overflow:hidden;box-shadow:0 22px 54px rgba(33,55,43,.18);border:1px solid var(--line);background:var(--green);}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-cap{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.82rem;letter-spacing:.06em;color:var(--muted);margin-top:14px;text-align:center;}
+  .video-cap span{color:var(--gold);}
+  .video-single{max-width:880px;margin:46px auto 0;}
+  .video-wed{margin-top:34px;}
+
   /* FOOTER */
   footer{background:#1a2c22;color:#aeb6a8;padding:60px 0 34px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:.86rem;}
   footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
@@ -198,6 +206,7 @@
     <a href="#top" class="brand">Rufflets<small>St Andrews &middot; Since 1952</small></a>
     <nav>
       <ul>
+        <li><a href="#watch">Watch</a></li>
         <li><a href="#stay">Stay</a></li>
         <li><a href="#dining">Food &amp; Drink</a></li>
         <li><a href="#weddings">Weddings</a></li>
@@ -247,6 +256,20 @@
       <h2>Not a chain. A family home you can stay in.</h2>
       <p class="lede">Rufflets was built in 1924 as a private house by the architect Donald Mills, and became one of Scotland's first country house hotels. The Russell family have looked after it since 1952, and they still do, in person, today.</p>
       <p class="quote">Nature, shared. Hospitality from the heart, in intimate spaces made for being together.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WATCH -->
+<section id="watch">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;text-align:center;">Watch</span>
+    <h2 style="text-align:center;">A look around the house and gardens.</h2>
+    <div class="video-single">
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/PHK_8Q6Vlac" title="A look around Rufflets" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="video-cap"><span>A look around Rufflets</span> &middot; the hotel's own film</p>
     </div>
   </div>
 </section>
@@ -338,6 +361,12 @@
         <img loading="lazy" src="https://www.rufflets.co.uk/media/jn2jwgn4/table-setting.jpg" alt="A dressed dinner table set for an event">
         <div class="label"><h3>Meetings &amp; Retreats</h3><p>Leadership retreats and meetings in a setting that helps people think.</p></div>
       </div>
+    </div>
+    <div class="video-single video-wed">
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/vilrpoBa4Gk" title="A wedding at Rufflets (film by Joe Hall)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="video-cap"><span>A wedding at Rufflets</span> &middot; film by Joe Hall</p>
     </div>
   </div>
 </section>
@@ -571,6 +600,35 @@
     "addressCountry":"GB"
   },
   "sameAs":["https://www.instagram.com/ruffletshotel/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "itemListElement":[
+    {
+      "@type":"VideoObject",
+      "name":"A look around Rufflets",
+      "description":"A short film around the country house hotel and gardens at Rufflets St Andrews, uploaded by the hotel.",
+      "thumbnailUrl":"https://i.ytimg.com/vi/PHK_8Q6Vlac/hqdefault.jpg",
+      "uploadDate":"2020-01-01",
+      "embedUrl":"https://www.youtube-nocookie.com/embed/PHK_8Q6Vlac",
+      "contentUrl":"https://www.youtube.com/watch?v=PHK_8Q6Vlac",
+      "author":{"@type":"Organization","name":"RuffletsHotel"},
+      "publisher":{"@type":"Organization","name":"Rufflets St Andrews"}
+    },
+    {
+      "@type":"VideoObject",
+      "name":"A wedding at Rufflets",
+      "description":"A wedding highlight film recorded at Rufflets St Andrews, filmed by Joe Hall.",
+      "thumbnailUrl":"https://i.ytimg.com/vi/vilrpoBa4Gk/hqdefault.jpg",
+      "uploadDate":"2020-01-01",
+      "embedUrl":"https://www.youtube-nocookie.com/embed/vilrpoBa4Gk",
+      "contentUrl":"https://www.youtube.com/watch?v=vilrpoBa4Gk",
+      "author":{"@type":"Person","name":"Joe Hall"}
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
